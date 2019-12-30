@@ -108,16 +108,79 @@
       <!-- PREFERENCES  -->
       <div class="quiz__wrap">
           <div class="quiz__question" v-if="currentStep === 13">
-              <h2><strong></strong></h2>
+              <h2><strong>How do you eat?</strong></h2>
               <h4 class="quiz__category">Preferences</h4>
-              <button class="quiz__selection" @click="addVata()"></button>
-              <button class="quiz__selection" @click="addPitta()"></button>
-              <button class="quiz__selection" @click="addKapha()"></button>
+              <button class="quiz__selection" @click="addVata()">Quick, “no one is getting my food ever!”</button>
+              <button class="quiz__selection" @click="addPitta()">Medium, easy does it</button>
+              <button class="quiz__selection" @click="addKapha()">Slow, “my friends are definitely on dessert whilst I am still chomping at my main course”</button>
+          </div>
+
+          <div class="quiz__question" v-if="currentStep === 14">
+              <h2><strong>When do you eat?</strong></h2>
+              <h4 class="quiz__category">Preferences</h4>
+              <button class="quiz__selection" @click="addVata()">Irregularly</button>
+              <button class="quiz__selection" @click="addPitta()">“Excuse me, please don’t talk to me I am hungry”</button>
+              <button class="quiz__selection" @click="addKapha()">Can easily miss meals</button>
+          </div>
+
+          <div class="quiz__question" v-if="currentStep === 15">
+              <h2><strong>What kind of weather do you like?</strong></h2>
+              <h4 class="quiz__category">Preferences</h4>
+              <button class="quiz__selection" @click="addVata()">Not a fan of winter </button>
+              <button class="quiz__selection" @click="addPitta()">Not a fan of the summer and the heat</button>
+              <button class="quiz__selection" @click="addKapha()">Not a fan of the rain and damp weather</button>
+          </div>
+
+          <div class="quiz__question" v-if="currentStep === 16">
+              <h2><strong>How do you react to stress?</strong></h2>
+              <h4 class="quiz__category">Preferences</h4>
+              <button class="quiz__selection" @click="addVata()">Quickly get myself all fired up</button>
+              <button class="quiz__selection" @click="addPitta()">I take it in my stride</button>
+              <button class="quiz__selection" @click="addKapha()">I don’t tend to react, too chilled</button>
+          </div>
+
+          <div class="quiz__question" v-if="currentStep === 17">
+              <h2><strong>Money? </strong></h2>
+              <h4 class="quiz__category">Preferences</h4>
+              <button class="quiz__selection" @click="addVata()">Saving? It slips through my fingers</button>
+              <button class="quiz__selection" @click="addPitta()">Saves big, spends big</button>
+              <button class="quiz__selection" @click="addKapha()">Saves regularly, I’m in the money</button>
+          </div>
+
+          <div class="quiz__question" v-if="currentStep === 18">
+              <h2><strong>Friendships?</strong></h2>
+              <h4 class="quiz__category">Preferences</h4>
+              <button class="quiz__selection" @click="addVata()">I have lots of friends, busy busy makes friends quickly</button>
+              <button class="quiz__selection" @click="addPitta()">Can be quite lonely and only few friends</button>
+              <button class="quiz__selection" @click="addKapha()">Have long-lasting friendships with people I’ve known for a long time</button>
           </div>
       </div>
       <!-- PREFERENCES  -->
+
+      <!-- GO TO RESULTS -->
+      <div class="quiz__wrap">
+          <div class="quiz__question" v-if="currentStep === 20">
+              <h2><strong>View results</strong></h2>
+              <h4 class="quiz__category">TEXT HERE</h4>
+              <p>Some text here...</p>
+              <button @click="calculateResults">Go to results</button>
+          </div>
+      </div>
+      <!-- GO TORESULTS -->
+
+      <!-- RESULTS -->
+      <div class="quiz__wrap">
+          <div class="quiz__question" v-if="currentStep === 20">
+              <h2><strong>VATA</strong></h2>
+              <h4 class="quiz__category">Vata Dosha (Wind energy)</h4>
+              <p>Vata comes from the elements of space and air and it is known as the energy of movement that governs all the biological activities of the body. It is also called the ‘king of doshas’ since it governs the body’s greater life force.</p>
+              <p>People born with Vata dosha are usually active, creative and are gifted with the natural ability to express and communicate. They are also quick learners, have a lively and fun personality, and are full of joy and enthusiasm when in balance. But when their Vata goes out of balance, they start showing tendencies to act on impulse, mood swings and respond to stress with fear, anxiety and worry.</p>
+          </div>
+      </div>
+      <!-- RESULTS -->
       
       <button class="quiz__back" @click="previousStep()" v-if="doshaHistory.length">Go back</button>
+      <button @click="skipToResults()">Skip to results</button>
   </div>
 </template>
 
@@ -168,7 +231,26 @@ export default {
             } if ( this.lastDosha === 'kapha' ) {
                 this.kapha = this.kapha - 1
             }
+        },
+        skipToResults() {
+            this.currentStep = 20
+        },
+        calculateResults() {
+            let vataResults = this.doshaHistory.toString().match(/vata/g).length
+            let pittaResults = this.doshaHistory.toString().match(/pitta/g).length
+            let kaphaResults = this.doshaHistory.toString().match(/kapha/g).length
 
+            let ayurvedaResults = {
+                'vata': vataResults,
+                'pitta': pittaResults,
+                'kapha': kaphaResults,
+            }
+
+            let ayurvedaResults2 = Object.keys(ayurvedaResults).reduce((a, b) => ayurvedaResults[a] > ayurvedaResults[b] ? a : b);
+
+            console.log(`${ayurvedaResults}`);
+            console.log(`${ayurvedaResults2}`);
+            
         }
     },
 }
