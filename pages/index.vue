@@ -168,10 +168,11 @@
                         <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Enter email here">
                     </div>
                     <div class="uk-margin">
-                        <button class="uk-button uk-button-primary" @click="goToResults()">Submit &amp; view results</button>
+                        <button class="uk-button uk-button-green" @click="goToResults()">Submit &amp; view results</button>
                         <a class="quiz__skip-email" @click="goToResults()">No thanks, take me straight to my results</a>
                     </div>
                 </form>
+                <hr>
           </div>
       </div>
       <!-- GO TORESULTS -->
@@ -181,32 +182,54 @@
           <div class="quiz__answer" v-if="currentStep === 20">
 
               <div v-if="finalResult === 'vata'">
-                  <h2><strong>VATA</strong></h2>
+                  <img src="~/assets/vata.jpg" class="quiz__img">
+                  <h2><strong>You are: VATA</strong></h2>
                   <h4 class="quiz__category--dosha">Vata Dosha (Wind energy)</h4>
                   <p>Vata comes from the elements of space and air and it is known as the energy of movement that governs all the biological activities of the body. It is also called the ‘king of doshas’ since it governs the body’s greater life force.</p>
                   <p>People born with Vata dosha are usually active, creative and are gifted with the natural ability to express and communicate. They are also quick learners, have a lively and fun personality, and are full of joy and enthusiasm when in balance. But when their Vata goes out of balance, they start showing tendencies to act on impulse, mood swings and respond to stress with fear, anxiety and worry.</p>
+
                   <hr>
                   <h4 class="quiz__category--dosha">Vata Body Type</h4>
                   <p>People of Vata body type are generally shorter or taller than average and are naturally slim without being overly muscly. </p>
                   <p>Their hair is usually curly or naturally wavy. They feel the cold especially in their hands and feet, nails can be rough and brittle. They might have a disturbed sleep pattern and so sleep less than other two body types.</p>
                   <p>Vatas love sweet foods and love their drinks hot.</p>
+
                   <hr>
                   <h4 class="quiz__category--dosha">The Vata Mind</h4>
                   <p>Psychologically, The Vata tribe have a good short term memory and have a quick mental understanding and so are able to grasp things quickly and easily. Though they might understand things quickly, but also have the tendency to forget with equal speed. They are not known for their will power and possess little tolerance, confidence and boldness. Vatas can be nervous, fearful and easily get anxious.</p>
               </div>
 
               <div v-if="finalResult === 'pitta'">
-                  <h2><strong>PITTA</strong></h2>
+                  <img src="~/assets/pitta.jpg" class="quiz__img">
+                  <h2><strong>You are: PITTA</strong></h2>
+                  <h4 class="quiz__category--dosha">Pitta Dosha (Fire energy)</h4>
+                  <p>Psychologically, The Vata tribe have a good short term memory and have a quick mental understanding and so are able to grasp things quickly and easily. Though they might understand things quickly, but also have the tendency to forget with equal speed. They are not known for their will power and possess little tolerance, confidence and boldness. Vatas can be nervous, fearful and easily get anxious.</p>
+
+                  <hr>
                   <h4 class="quiz__category--dosha">Vata Dosha (Wind energy)</h4>
-                  <p>Vata comes from the elements of space and air and it is known as the energy of movement that governs all the biological activities of the body. It is also called the ‘king of doshas’ since it governs the body’s greater life force.</p>
-                  <p>People born with Vata dosha are usually active, creative and are gifted with the natural ability to express and communicate. They are also quick learners, have a lively and fun personality, and are full of joy and enthusiasm when in balance. But when their Vata goes out of balance, they start showing tendencies to act on impulse, mood swings and respond to stress with fear, anxiety and worry.</p>
+                  <p>Pittas are usually of medium height and have a delicate and slender body frame. Their muscle development is moderate and usually have a fair or reddish kind of complexion. They are blessed with a soft skin and hair is usually silky but more on the thinner side and may go grey early. The colour of their eyes usually range from green, grey or copper brown.</p>
+                  <p>Pittas have a strong metabolism and good digestion which results in them having a healthy appetite. They have a natural craving for both sweet and bitter foods.</p>
+
+                  <hr>
+                  <h4 class="quiz__category--dosha">The Pitta Mind</h4>
+                  <p>The Pitta tribe are sharp mind with excellent concentration powers. They tend to quickly comprehend situations and react with agility. They are considered to be good speakers and generally possess good management and leadership skills. They are usually competitive by nature and enjoy challenges. </p>
               </div>
 
               <div v-if="finalResult === 'kapha'">
-                  <h2><strong>KAPHA</strong></h2>
-                  <h4 class="quiz__category--dosha">Vata Dosha (Wind energy)</h4>
-                  <p>Vata comes from the elements of space and air and it is known as the energy of movement that governs all the biological activities of the body. It is also called the ‘king of doshas’ since it governs the body’s greater life force.</p>
-                  <p>People born with Vata dosha are usually active, creative and are gifted with the natural ability to express and communicate. They are also quick learners, have a lively and fun personality, and are full of joy and enthusiasm when in balance. But when their Vata goes out of balance, they start showing tendencies to act on impulse, mood swings and respond to stress with fear, anxiety and worry.</p>
+                  <img src="~/assets/kapha.jpg" class="quiz__img">
+                  <h2><strong>You are: KAPHA</strong></h2>
+                  <h4 class="quiz__category--dosha">Kapha Dosha (Water energy)</h4>
+                  <p>Kapha Dosha is the energy of building and lubrication that provides the body with physical form, structure and smooth functioning of all its parts. The main location of kapha in the body are chest, throat, lungs, head, fatty tissues, connective tissues, ligaments and tendons. It aids in lubricating the joints, store energy and give bulk to the tissues.</p>
+                  <p>Kapha people are usually loving in nature, easy going, relaxed and slow paced. They are compassionate and non-judgmental people and have a graceful appearance. They do not get upset easily but can be known to be possessive and or loyal and so hold on to things and people for a long period of time. They are usually good with money, have savings and/or are wealthy.</p>
+                  
+                  <hr>
+                  <h4 class="quiz__category--dosha">Kapha Body Type</h4>
+                  <p>Kapha people have well developed bodies, they gain weight easily and find it difficult to lose. They usually have fair complexion and have good skin elasticity. Their hair is usually thick, dark and of wavy kind and eyes are large and dark brown or blue.</p>
+                  <p>They have a regular appetite but due to slow digestion they tend to eat less but more often.</p>
+                  
+                  <hr>
+                  <h4 class="quiz__category--dosha">The Kapha Mind</h4>
+                  <p>Kaphas are chilled and do not get irritated easily. They are of forgiving and peaceful nature and believe in maintaining harmony in their surroundings. However, they do exhibit traits of greed, attachment, envy and possessiveness. They like to learn and at a slow and steady pace, but once they understand their knowledge will stay with them. </p>
               </div>
 
           </div>
@@ -214,14 +237,17 @@
       <!-- RESULTS -->
       
       <button 
-        class="quiz__back"
+        class="uk-button uk-button-secondary"
         @click="previousStep()" 
         v-if="doshaHistory.length && currentStep !== 20"
       >
         Go back
       </button>
-      <button @click="goToEmail()">Skip to enter email (for testing only)</button>
-      <button @click="goToResults()">Skip to results (for testing only)</button>
+    
+      <div style="margin-top: 50px">
+        <button @click="goToEmail()">Skip to enter email (for testing only)</button>
+        <button @click="goToResults()">Skip to results (for testing only)</button>
+      </div>
   </div>
 </template>
 
@@ -377,5 +403,17 @@ export default {
     font-size: 12px;
     padding-top: 20px;
     color: #555;
+}
+
+.quiz__img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 100px;
+    max-width: 140px;
+}
+
+.uk-button-green {
+    color: #fff;
+    background-color: #22c10e;
 }
 </style>
