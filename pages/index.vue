@@ -206,7 +206,7 @@
                   <p>Psychologically, The Vata tribe have a good short term memory and have a quick mental understanding and so are able to grasp things quickly and easily. Though they might understand things quickly, but also have the tendency to forget with equal speed. They are not known for their will power and possess little tolerance, confidence and boldness. Vatas can be nervous, fearful and easily get anxious.</p>
 
                   <hr>
-                  <h4 class="quiz__category--dosha">Vata Dosha (Wind energy)</h4>
+                  <h4 class="quiz__category--dosha">Kapha Body Type</h4>
                   <p>Pittas are usually of medium height and have a delicate and slender body frame. Their muscle development is moderate and usually have a fair or reddish kind of complexion. They are blessed with a soft skin and hair is usually silky but more on the thinner side and may go grey early. The colour of their eyes usually range from green, grey or copper brown.</p>
                   <p>Pittas have a strong metabolism and good digestion which results in them having a healthy appetite. They have a natural craving for both sweet and bitter foods.</p>
 
