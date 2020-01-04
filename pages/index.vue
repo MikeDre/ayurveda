@@ -4,48 +4,48 @@
       <!-- PHYSICAL APPEARANCE -->
       <div class="quiz__wrap">
           <div class="quiz__question" v-if="currentStep === 1">
+              <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>How would you describe your body?</strong></h2>
-              <h4 class="quiz__category">Physical Appearance</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">I would say that I am slim or petite or tall</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">I would say that I am medium size, with a muscular body with curves </button>
               <button class="quiz__selection" @click="addKapha(currentStep)">I would say that I am a larger build and maybe overweight </button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 2">
+              <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>Ability to lose or gain weight?</strong></h2>
-              <h4 class="quiz__category">Physical Appearance</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">I find it difficult to gain weight</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">I tend to stay the same </button>
               <button class="quiz__selection" @click="addKapha(currentStep)">I find it really hard to lose weight it requires all my effort</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 3">
+              <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>What is your skin like?</strong></h2>
-              <h4 class="quiz__category">Physical Appearance</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">It’s quite dry can be rough, dark circles under eyes, tan easily</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">It’s quite fair, red, prone to freckles, prone to sunburn (my friends call me lobby!)</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">It’s clear, combination skin, without excess wrinkles</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 4">
+              <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>What is your hair like?</strong></h2>
-              <h4 class="quiz__category">Physical Appearance</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Curly, dry or coarse, dark (i.e. hard to handle)</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Fine, early grey, blonde, red</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Thick, wavy, oily, dark or light (i.e. wild)</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 5">
+              <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>Teeth?</strong></h2>
-              <h4 class="quiz__category">Physical Appearance</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Very large or very small</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Moderate size</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Small to moderate</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 6">
+              <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>Eyes?</strong></h2>
-              <h4 class="quiz__category">Physical Appearance</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">My eyes are small, brown</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">My eyes are green, hazel or blue, and sharp</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">My eyes are large, brown or blue with long lashes </button>
@@ -56,48 +56,48 @@
       <!-- MENTAL PROFILE -->
       <div class="quiz__wrap">
           <div class="quiz__question" v-if="currentStep === 7">
+              <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Would you say your mind is?</strong></h2>
-              <h4 class="quiz__category">Mental Profile</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Quick and restless, jumping all over the show</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Intellectual and driven, “I have a goal”</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Calm, steady and stable “chill AF”</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 8">
+              <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>What is your memory like? Sorry, what did you say (bad joke) </strong></h2>
-              <h4 class="quiz__category">Mental Profile</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Short-term difficulty retaining information</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Good general memory, quite focused</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">“I take my sweet time in learning but have a memory like an elephant”</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 9">
+              <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Thoughts?</strong></h2>
-              <h4 class="quiz__category">Mental Profile</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">onstantly changing, (no idea what I want)</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">“I know what I want and the eye is on the prize”</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Slow and steady wins the race</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 10">
+              <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Emotional temperament?</strong></h2>
-              <h4 class="quiz__category">Mental Profile</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Insecure, unpredictable, (a little bit all over the show)</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Can be a little intense, quite goal focused, “hell I go after what I want”</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Calm, can be a bit needy or greedy, attach myself</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 11">
+              <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Sleep?</strong></h2>
-              <h4 class="quiz__category">Mental Profile</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Interrupted, light</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Sound, medium</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Sound, heavy, long, “ you are not waking me for shiz”</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 12">
+              <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Speech?</strong></h2>
-              <h4 class="quiz__category">Mental Profile</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Fast maybe a little bit garbled</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Fast, sharp, clear, (I should have been a politician)</button>
               <button class="quiz__selection" @click="addKapha(currentStep)"> Slow, clear, friendly, (should have done voice-over ads)</button>
@@ -108,48 +108,48 @@
       <!-- PREFERENCES  -->
       <div class="quiz__wrap">
           <div class="quiz__question" v-if="currentStep === 13">
+              <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>How do you eat?</strong></h2>
-              <h4 class="quiz__category">Preferences</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Quick, “no one is getting my food ever!”</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Medium, easy does it</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Slow, “my friends are definitely on dessert whilst I am still chomping at my main course”</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 14">
+              <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>When do you eat?</strong></h2>
-              <h4 class="quiz__category">Preferences</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Irregularly</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">“Excuse me, please don’t talk to me I am hungry”</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Can easily miss meals</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 15">
+              <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>What kind of weather do you like?</strong></h2>
-              <h4 class="quiz__category">Preferences</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Not a fan of winter </button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Not a fan of the summer and the heat</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Not a fan of the rain and damp weather</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 16">
+              <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>How do you react to stress?</strong></h2>
-              <h4 class="quiz__category">Preferences</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Quickly get myself all fired up</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">I take it in my stride</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">I don’t tend to react, too chilled</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 17">
+              <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>Money? </strong></h2>
-              <h4 class="quiz__category">Preferences</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">Saving? It slips through my fingers</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Saves big, spends big</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Saves regularly, I’m in the money</button>
           </div>
 
           <div class="quiz__question" v-if="currentStep === 18">
+              <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>Friendships?</strong></h2>
-              <h4 class="quiz__category">Preferences</h4>
               <button class="quiz__selection" @click="addVata(currentStep)">I have lots of friends, busy busy makes friends quickly</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">Can be quite lonely and only few friends</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Have long-lasting friendships with people I’ve known for a long time</button>
@@ -161,8 +161,8 @@
       <div class="quiz__wrap">
           <div class="quiz__question" v-if="currentStep === 19">
               <h2><strong>View results</strong></h2>
-              <h4 class="quiz__category">TEXT HERE</h4>
-              <p>Some text here to encourage an email signup...</p>
+              <p>Got you interested? Why not subscribe for a FREE info sheet on recommended diet suggestions for your unique Dosha type.  You will also have the opportunity to register for my FREE ‘2 Days of Awesome’ digestive reset</p>
+              <div class="uk-margin-large">
                 <form>
                     <div class="uk-margin">
                         <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Enter email here">
@@ -172,7 +172,8 @@
                         <a class="quiz__skip-email" @click="goToResults()">No thanks, take me straight to my results</a>
                     </div>
                 </form>
-                <hr>
+              </div>
+              <hr>
           </div>
       </div>
       <!-- GO TORESULTS -->
@@ -206,7 +207,7 @@
                   <p>Psychologically, The Vata tribe have a good short term memory and have a quick mental understanding and so are able to grasp things quickly and easily. Though they might understand things quickly, but also have the tendency to forget with equal speed. They are not known for their will power and possess little tolerance, confidence and boldness. Vatas can be nervous, fearful and easily get anxious.</p>
 
                   <hr>
-                  <h4 class="quiz__category--dosha">Kapha Body Type</h4>
+                  <h4 class="quiz__category--dosha">Pitta Body Type</h4>
                   <p>Pittas are usually of medium height and have a delicate and slender body frame. Their muscle development is moderate and usually have a fair or reddish kind of complexion. They are blessed with a soft skin and hair is usually silky but more on the thinner side and may go grey early. The colour of their eyes usually range from green, grey or copper brown.</p>
                   <p>Pittas have a strong metabolism and good digestion which results in them having a healthy appetite. They have a natural craving for both sweet and bitter foods.</p>
 
@@ -342,6 +343,11 @@ export default {
     margin-top: 100px;
 }
 
+.quiz__question h2 {
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
 .quiz__answer {
     margin-top: 100px;
     margin-bottom: 100px;
@@ -386,7 +392,7 @@ export default {
     color: #888;
     font-size: 16px;
     font-weight: 700;
-    margin: 0 0 50px;
+    margin: 0;
     text-transform: uppercase;
 }
 
