@@ -1,6 +1,8 @@
 <template>
   <div class="uk-container uk-container-small uk-text-center">
-
+      <div class="logo">
+        <img src="//static1.squarespace.com/static/58caa7e9d1758e9193afa4c4/t/58caa8358419c287d4b90659/1567614336841/?format=1500w" alt="Kitchen &amp; Soul" width="250" class="uk-margin-medium-top">
+      </div>
       <!-- PHYSICAL APPEARANCE -->
       <div class="quiz__wrap">
           <div class="quiz__question" v-if="currentStep === 1">
@@ -162,20 +164,25 @@
           <div class="quiz__question" v-if="currentStep === 19">
               <h2><strong>View results</strong></h2>
               <div class="uk-margin-large">
-                <form class="quiz__form" v-on:submit.prevent>
+                <form :action="formURL" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate quiz__form" novalidate>
                     <div class="uk-margin-medium-bottom">
-                        <p>Got you interested? Why not subscribe for a FREE info sheet on recommended diet suggestions for your unique Dosha type. You will also have the opportunity to register for my FREE ‘2 Days of Awesome’ digestive reset</p>
+                        <p><strong>Got you interested?</strong><br>Why not subscribe for a FREE info sheet on recommended diet suggestions for your unique Dosha type. You will also have the opportunity to register for my FREE ‘2 Days of Awesome’ digestive reset</p>
                     </div>
                     <div class="uk-margin">
-                        <label class="quiz__form-label" for="name">Name</label>
-                        <input id="name" v-model="subscriberName" class="uk-input uk-form-width-large uk-form-large uk-margin-small-bottom" type="text" placeholder="Enter name here">
+                        <label class="quiz__form-label" for="name">Name *</label>
+                        <input id="name" name="NAME" v-model="subscriberName" class="uk-input uk-form-width-large uk-form-large uk-margin-small-bottom" type="text" placeholder="Enter name here">
 
-                        <label class="quiz__form-label" for="name">E-mail</label>
-                        <input id="email" v-model="subscriberEmail" class="uk-input uk-form-width-large uk-form-large" type="email" placeholder="Enter email here">
+                        <label class="quiz__form-label" for="name">E-mail *</label>
+                        <input required id="email" name="EMAIL" v-model="subscriberEmail" class="uk-input uk-form-width-large uk-form-large" type="email" placeholder="Enter email here">
+                        
+                        <input required id="dosha" hidden name="DOSHA" v-model="finalResult" v-on:input="enableSubmit()" class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Dosha result">
+
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_81b0366064ebef409489ac748_09b33a6107" tabindex="-1" value=""></div>
                     </div>
                     <div class="uk-margin">
-                        <button class="uk-button uk-button-green" @click="subscribeToMailchimp()">Submit &amp; view results</button>
-                        <a class="quiz__skip-email" @click="goToResults()">No thanks, take me straight to my results</a>
+                        <button type="submit" class="uk-button uk-button-green">Submit &amp; view results</button>
+                        <a class="quiz__skip-email" :disabled="formFilled" @click="goToResults()">No thanks, take me straight to my results</a>
                     </div>
                 </form>
               </div>
@@ -246,7 +253,7 @@
       <button 
         class="uk-button uk-button-secondary"
         @click="previousStep()" 
-        v-if="doshaHistory.length && currentStep !== 20"
+        v-if="currentStep > 1 && currentStep !== 20"
       >
         Go back
       </button>
@@ -270,9 +277,11 @@ export default {
             pitta: 0,
             kapha: 0,
             lastDosha: '',
-            doshaHistory: [],
+            doshaHistory: ['vata', 'kapha', 'pitta'],
             currentStep: 1,
             finalResult: null,
+            formFilled: false,
+            formURL: ''
         }
     },
     methods: {
@@ -282,6 +291,7 @@ export default {
 
             if (currentStep >= 18) {
                 this.calculateResults()
+                this.setForm()
             }
 
             this.nextStep()
@@ -292,6 +302,7 @@ export default {
 
             if (currentStep >= 18) {
                 this.calculateResults()
+                this.setForm()
             }
 
             this.nextStep()
@@ -302,6 +313,7 @@ export default {
 
             if (currentStep >= 18) {
                 this.calculateResults()
+                this.setForm()
             }
 
             this.nextStep()
@@ -326,10 +338,23 @@ export default {
         goToEmail() {
             this.currentStep = 19
             this.calculateResults()
+            this.setForm()
+        },
+        enableSubmit() {
+            this.formFilled = true
         },
         goToResults() {
             this.currentStep = 20
             this.calculateResults()
+        },
+        setForm() {
+            if (this.finalResult === 'vata') {
+                this.formURL = 'https://newnuevo.us4.list-manage.com/subscribe/post?u=81b0366064ebef409489ac748&amp;id=09b33a6107'
+            } else if (this.finalResult === 'pitta') {
+                this.formURL = 'https://newnuevo.us4.list-manage.com/subscribe/post?u=81b0366064ebef409489ac748&amp;id=09b33a6107'
+            } else if (this.finalResult === 'kapha') {
+                this.formURL = 'https://newnuevo.us4.list-manage.com/subscribe/post?u=81b0366064ebef409489ac748&amp;id=09b33a6107'
+            }
         },
         calculateResults() {
             let vataResults = (this.doshaHistory.toString().match(/vata/g).length)
@@ -345,43 +370,6 @@ export default {
             let ayurvedaTopResult = Object.keys(ayurvedaResults).reduce((a, b) => ayurvedaResults[a] > ayurvedaResults[b] ? a : b);
             this.finalResult = ayurvedaTopResult
         },
-        async subscribeToMailchimp() {
-            let audienceID = '09b33a6107';
-            let dataCenter = 'us4';
-            let apiKey = '8a4b428095d9f9431846cb4af3323f10-us4';
-
-            // // Mailchimp identifies users by the md5 has of the lowercase of their email address (for updates / put / patch)
-            // let mailchimpEmailId = md5(values['unsubscribe-email-address'].toLowerCase());
-
-            let postData = {
-                email_address: this.subscriberEmail,
-                status: 'subscribed',
-                merge_fields: {
-                    FNAME: this.subscriberName,
-                    DOSHA: this.finalResult
-                }
-            };
-
-            let axiosConfig = {
-                headers: {
-                    'authorization': "Basic " + Buffer.from('mailchimpUser:' + apiKey).toString('base64'),
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            };
-
-            try {
-                let mcResponse = await axios.post(
-                    'https://' + dataCenter + '.api.mailchimp.com/3.0/lists/' + audienceID + '/members',
-                    postData,
-                    axiosConfig
-                )
-            } catch(err) {
-                console.log("Mailchimp Error: ", err);
-            }
-
-            this.goToResults()
-        }
     },
 }
 </script>
