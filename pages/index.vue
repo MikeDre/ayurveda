@@ -182,14 +182,14 @@
                     </div>
                     <div class="uk-margin">
                         <button type="submit" class="uk-button uk-button-green">Submit &amp; view results</button>
-                        <a class="quiz__skip-email" :disabled="formFilled" @click="goToResults()">No thanks, take me straight to my results</a>
+                        <a :href="resultsPage" class="quiz__skip-email" :disabled="formFilled">No thanks, take me straight to my results</a>
                     </div>
                 </form>
               </div>
               <hr>
           </div>
       </div>
-      <!-- GO TORESULTS -->
+      <!-- GO TO RESULTS -->
 
       <!-- RESULTS -->
       <div class="quiz__wrap">
@@ -257,17 +257,10 @@
       >
         Go back
       </button>
-    
-      <div style="margin-top: 50px">
-        <button @click="goToEmail()">Skip to enter email (for testing only)</button>
-        <button @click="goToResults()">Skip to results (for testing only)</button>
-      </div>
   </div>
 </template>
 
 <script>
-const axios = require("axios")
-
 export default {
     data() {
         return {
@@ -281,7 +274,8 @@ export default {
             currentStep: 1,
             finalResult: null,
             formFilled: false,
-            formURL: ''
+            formURL: 'https://kitchenandsoul.us14.list-manage.com/subscribe/post?u=42919a14925c3194f0333a715&amp;id=3d203b7c6a',
+            resultsPage: ''
         }
     },
     methods: {
@@ -291,7 +285,6 @@ export default {
 
             if (currentStep >= 18) {
                 this.calculateResults()
-                this.setForm()
             }
 
             this.nextStep()
@@ -302,7 +295,6 @@ export default {
 
             if (currentStep >= 18) {
                 this.calculateResults()
-                this.setForm()
             }
 
             this.nextStep()
@@ -313,10 +305,18 @@ export default {
 
             if (currentStep >= 18) {
                 this.calculateResults()
-                this.setForm()
             }
 
             this.nextStep()
+        },
+        setResultsPage() {
+            if (this.finalResult === 'vata') {
+                this.resultsPage = 'https://www.kitchenandsoul.uk/ayurveda-results/vata'
+            } else if (this.finalResult === 'pitta') {
+                this.resultsPage = 'https://www.kitchenandsoul.uk/ayurveda-results/pitta'
+            } else if (this.finalResult === 'kapha') {
+                this.resultsPage = 'https://www.kitchenandsoul.uk/ayurveda-results/kapha'
+            }
         },
         nextStep() {
             this.currentStep = this.currentStep + 1
@@ -338,7 +338,6 @@ export default {
         goToEmail() {
             this.currentStep = 19
             this.calculateResults()
-            this.setForm()
         },
         enableSubmit() {
             this.formFilled = true
@@ -346,15 +345,6 @@ export default {
         goToResults() {
             this.currentStep = 20
             this.calculateResults()
-        },
-        setForm() {
-            if (this.finalResult === 'vata') {
-                this.formURL = 'https://newnuevo.us4.list-manage.com/subscribe/post?u=81b0366064ebef409489ac748&amp;id=09b33a6107'
-            } else if (this.finalResult === 'pitta') {
-                this.formURL = 'https://newnuevo.us4.list-manage.com/subscribe/post?u=81b0366064ebef409489ac748&amp;id=09b33a6107'
-            } else if (this.finalResult === 'kapha') {
-                this.formURL = 'https://newnuevo.us4.list-manage.com/subscribe/post?u=81b0366064ebef409489ac748&amp;id=09b33a6107'
-            }
         },
         calculateResults() {
             let vataResults = (this.doshaHistory.toString().match(/vata/g).length)
@@ -369,6 +359,7 @@ export default {
 
             let ayurvedaTopResult = Object.keys(ayurvedaResults).reduce((a, b) => ayurvedaResults[a] > ayurvedaResults[b] ? a : b);
             this.finalResult = ayurvedaTopResult
+            this.setResultsPage()
         },
     },
 }
