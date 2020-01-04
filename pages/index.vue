@@ -163,12 +163,13 @@
               <h2><strong>View results</strong></h2>
               <p>Got you interested? Why not subscribe for a FREE info sheet on recommended diet suggestions for your unique Dosha type.  You will also have the opportunity to register for my FREE ‘2 Days of Awesome’ digestive reset</p>
               <div class="uk-margin-large">
-                <form>
+                <form v-on:submit.prevent>
                     <div class="uk-margin">
-                        <input class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Enter email here">
+                        <input v-model="subscriberName" class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Enter name here">
+                        <input v-model="subscriberEmail" class="uk-input uk-form-width-large uk-form-large" type="email" placeholder="Enter email here">
                     </div>
                     <div class="uk-margin">
-                        <button class="uk-button uk-button-green" @click="goToResults()">Submit &amp; view results</button>
+                        <button class="uk-button uk-button-green" @click="subscribeToMailchimp()">Submit &amp; view results</button>
                         <a class="quiz__skip-email" @click="goToResults()">No thanks, take me straight to my results</a>
                     </div>
                 </form>
@@ -253,9 +254,13 @@
 </template>
 
 <script>
+const axios = require("axios")
+
 export default {
     data() {
         return {
+            subscriberName: null,
+            subscriberEmail: null,
             vata: 0,
             pitta: 0,
             kapha: 0,
@@ -315,6 +320,7 @@ export default {
         },
         goToEmail() {
             this.currentStep = 19
+            this.calculateResults()
         },
         goToResults() {
             this.currentStep = 20
@@ -333,6 +339,43 @@ export default {
 
             let ayurvedaTopResult = Object.keys(ayurvedaResults).reduce((a, b) => ayurvedaResults[a] > ayurvedaResults[b] ? a : b);
             this.finalResult = ayurvedaTopResult
+        },
+        async subscribeToMailchimp() {
+            let audienceID = '09b33a6107';
+            let dataCenter = 'us4';
+            let apiKey = '8a4b428095d9f9431846cb4af3323f10-us4';
+
+            // // Mailchimp identifies users by the md5 has of the lowercase of their email address (for updates / put / patch)
+            // let mailchimpEmailId = md5(values['unsubscribe-email-address'].toLowerCase());
+
+            let postData = {
+                email_address: this.subscriberEmail,
+                status: 'subscribed',
+                merge_fields: {
+                    FNAME: this.subscriberName,
+                    DOSHA: this.finalResult
+                }
+            };
+
+            let axiosConfig = {
+                headers: {
+                    'authorization': "Basic " + Buffer.from('mailchimpUser:' + apiKey).toString('base64'),
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            };
+
+            try {
+                let mcResponse = await axios.post(
+                    'https://' + dataCenter + '.api.mailchimp.com/3.0/lists/' + audienceID + '/members',
+                    postData,
+                    axiosConfig
+                )
+            } catch(err) {
+                console.log("Mailchimp Error: ", err);
+            }
+
+            this.goToResults()
         }
     },
 }
