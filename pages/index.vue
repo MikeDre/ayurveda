@@ -161,12 +161,17 @@
       <div class="quiz__wrap">
           <div class="quiz__question" v-if="currentStep === 19">
               <h2><strong>View results</strong></h2>
-              <p>Got you interested? Why not subscribe for a FREE info sheet on recommended diet suggestions for your unique Dosha type.  You will also have the opportunity to register for my FREE ‘2 Days of Awesome’ digestive reset</p>
               <div class="uk-margin-large">
-                <form v-on:submit.prevent>
+                <form class="quiz__form" v-on:submit.prevent>
+                    <div class="uk-margin-medium-bottom">
+                        <p>Got you interested? Why not subscribe for a FREE info sheet on recommended diet suggestions for your unique Dosha type. You will also have the opportunity to register for my FREE ‘2 Days of Awesome’ digestive reset</p>
+                    </div>
                     <div class="uk-margin">
-                        <input v-model="subscriberName" class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Enter name here">
-                        <input v-model="subscriberEmail" class="uk-input uk-form-width-large uk-form-large" type="email" placeholder="Enter email here">
+                        <label class="quiz__form-label" for="name">Name</label>
+                        <input id="name" v-model="subscriberName" class="uk-input uk-form-width-large uk-form-large uk-margin-small-bottom" type="text" placeholder="Enter name here">
+
+                        <label class="quiz__form-label" for="name">E-mail</label>
+                        <input id="email" v-model="subscriberEmail" class="uk-input uk-form-width-large uk-form-large" type="email" placeholder="Enter email here">
                     </div>
                     <div class="uk-margin">
                         <button class="uk-button uk-button-green" @click="subscribeToMailchimp()">Submit &amp; view results</button>
@@ -327,7 +332,7 @@ export default {
             this.calculateResults()
         },
         calculateResults() {
-            let vataResults = this.doshaHistory.toString().match(/vata/g).length
+            let vataResults = (this.doshaHistory.toString().match(/vata/g).length)
             let pittaResults = this.doshaHistory.toString().match(/pitta/g).length
             let kaphaResults = this.doshaHistory.toString().match(/kapha/g).length
 
@@ -452,6 +457,21 @@ export default {
     font-size: 12px;
     padding-top: 20px;
     color: #555;
+}
+
+form.quiz__form{
+    background: #f7f7f7;
+    padding: 50px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+label.quiz__form-label {
+    text-align: left;
+    display: block;
+    max-width: 500px;
+    margin: 15px auto 10px;
+    font-weight: 700;
 }
 
 .quiz__img {
