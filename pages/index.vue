@@ -166,7 +166,9 @@
               <div class="uk-margin-large">
                 <form :action="formURL" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate quiz__form" novalidate>
                     <div class="uk-margin-medium-bottom">
-                        <p><strong>Got you interested?</strong><br>Why not subscribe for a FREE info sheet on recommended diet suggestions for your unique Dosha type. You will also have the opportunity to register for my FREE ‘2 Days of Awesome’ digestive reset</p>
+                        <p><strong>Got you interested?</strong><br>
+                        Why not subscribe for a FREE info sheet on recommended diet suggestions for your unique Dosha type. You will also have the opportunity to participate in my FREE ‘2 Days of Awesome’ digestive reset. A fabulous way to restore your energy, get your glow back and kick start your metabolism. Go on I know you want to. Only awesomeness will be sent.
+                        </p>
                     </div>
                     <div class="uk-margin">
                         <label class="quiz__form-label" for="name">Name *</label>
@@ -435,14 +437,20 @@ export default {
     display: block;
     font-size: 12px;
     padding-top: 20px;
-    color: #555;
+    color: #fff;
 }
 
-form.quiz__form{
-    background: #f7f7f7;
+.quiz__skip-email:hover {
+    color: #fff;
+}
+
+
+form.quiz__form {
+    background: #ff5859bd;
     padding: 50px;
-    border: 1px solid #ddd;
+    border: 1px solid #ff5859;
     border-radius: 10px;
+    color: #fff;
 }
 
 label.quiz__form-label {
