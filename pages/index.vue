@@ -2,7 +2,7 @@
   <div class="uk-container uk-container-small uk-text-center">
       <!-- PHYSICAL APPEARANCE -->
       <div class="quiz__wrap">
-          <div class="quiz__question" v-if="currentStep === 1">
+          <div class="quiz__question no-mt" v-if="currentStep === 1">
               <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>How would you describe your body?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">I would say that I am slim or petite or tall</button>
@@ -468,5 +468,9 @@ label.quiz__form-label {
 .uk-button-green {
     color: #fff;
     background-color: #22c10e;
+}
+
+.no-mt {
+    margin-top: 0;
 }
 </style>
