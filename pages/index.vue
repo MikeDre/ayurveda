@@ -10,7 +10,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">I would say that I am a larger build and maybe overweight </button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 2">
+          <div class="quiz__question no-mt" v-if="currentStep === 2">
               <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>Ability to lose or gain weight?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">I find it difficult to gain weight</button>
@@ -18,7 +18,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">I find it really hard to lose weight it requires all my effort</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 3">
+          <div class="quiz__question no-mt" v-if="currentStep === 3">
               <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>What is your skin like?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">It’s quite dry can be rough, dark circles under eyes, tan easily</button>
@@ -26,7 +26,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">It’s clear, combination skin, without excess wrinkles</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 4">
+          <div class="quiz__question no-mt" v-if="currentStep === 4">
               <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>What is your hair like?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Curly, dry or coarse, dark (i.e. hard to handle)</button>
@@ -34,7 +34,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Thick, wavy, oily, dark or light (i.e. wild)</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 5">
+          <div class="quiz__question no-mt" v-if="currentStep === 5">
               <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>Teeth?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Very large or very small</button>
@@ -42,7 +42,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Small to moderate</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 6">
+          <div class="quiz__question no-mt" v-if="currentStep === 6">
               <h4 class="quiz__category">Okay let’s start with your physical appearance</h4>
               <h2><strong>Eyes?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">My eyes are small, brown</button>
@@ -54,7 +54,7 @@
 
       <!-- MENTAL PROFILE -->
       <div class="quiz__wrap">
-          <div class="quiz__question" v-if="currentStep === 7">
+          <div class="quiz__question no-mt" v-if="currentStep === 7">
               <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Would you say your mind is?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Quick and restless, jumping all over the show</button>
@@ -62,7 +62,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Calm, steady and stable “chill AF”</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 8">
+          <div class="quiz__question no-mt" v-if="currentStep === 8">
               <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>What is your memory like? Sorry, what did you say (bad joke) </strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Short-term difficulty retaining information</button>
@@ -70,7 +70,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">“I take my sweet time in learning but have a memory like an elephant”</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 9">
+          <div class="quiz__question no-mt" v-if="currentStep === 9">
               <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Thoughts?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">onstantly changing, (no idea what I want)</button>
@@ -78,7 +78,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Slow and steady wins the race</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 10">
+          <div class="quiz__question no-mt" v-if="currentStep === 10">
               <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Emotional temperament?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Insecure, unpredictable, (a little bit all over the show)</button>
@@ -86,7 +86,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Calm, can be a bit needy or greedy, attach myself</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 11">
+          <div class="quiz__question no-mt" v-if="currentStep === 11">
               <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Sleep?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Interrupted, light</button>
@@ -94,7 +94,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Sound, heavy, long, “ you are not waking me for shiz”</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 12">
+          <div class="quiz__question no-mt" v-if="currentStep === 12">
               <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Speech?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Fast maybe a little bit garbled</button>
@@ -106,7 +106,7 @@
 
       <!-- PREFERENCES  -->
       <div class="quiz__wrap">
-          <div class="quiz__question" v-if="currentStep === 13">
+          <div class="quiz__question no-mt" v-if="currentStep === 13">
               <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>How do you eat?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Quick, “no one is getting my food ever!”</button>
@@ -114,7 +114,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Slow, “my friends are definitely on dessert whilst I am still chomping at my main course”</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 14">
+          <div class="quiz__question no-mt" v-if="currentStep === 14">
               <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>When do you eat?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Irregularly</button>
@@ -122,7 +122,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Can easily miss meals</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 15">
+          <div class="quiz__question no-mt" v-if="currentStep === 15">
               <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>What kind of weather do you like?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Not a fan of winter </button>
@@ -130,7 +130,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Not a fan of the rain and damp weather</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 16">
+          <div class="quiz__question no-mt" v-if="currentStep === 16">
               <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>How do you react to stress?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Quickly get myself all fired up</button>
@@ -138,7 +138,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">I don’t tend to react, too chilled</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 17">
+          <div class="quiz__question no-mt" v-if="currentStep === 17">
               <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>Money? </strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">Saving? It slips through my fingers</button>
@@ -146,7 +146,7 @@
               <button class="quiz__selection" @click="addKapha(currentStep)">Saves regularly, I’m in the money</button>
           </div>
 
-          <div class="quiz__question" v-if="currentStep === 18">
+          <div class="quiz__question no-mt" v-if="currentStep === 18">
               <h4 class="quiz__category">Now what about the way you behave and your preferences</h4>
               <h2><strong>Friendships?</strong></h2>
               <button class="quiz__selection" @click="addVata(currentStep)">I have lots of friends, busy busy makes friends quickly</button>
@@ -158,7 +158,7 @@
 
       <!-- GO TO RESULTS -->
       <div class="quiz__wrap">
-          <div class="quiz__question" v-if="currentStep === 19">
+          <div class="quiz__question no-mt" v-if="currentStep === 19">
               <h2><strong>View results</strong></h2>
               <div class="uk-margin-large">
                 <form :action="formURL" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate quiz__form" novalidate>
