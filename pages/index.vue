@@ -1,8 +1,5 @@
 <template>
   <div class="uk-container uk-container-small uk-text-center">
-      <div class="logo">
-        <img src="//static1.squarespace.com/static/58caa7e9d1758e9193afa4c4/t/58caa8358419c287d4b90659/1567614336841/?format=1500w" alt="Kitchen &amp; Soul" width="250" class="uk-margin-medium-top">
-      </div>
       <!-- PHYSICAL APPEARANCE -->
       <div class="quiz__wrap">
           <div class="quiz__question" v-if="currentStep === 1">
