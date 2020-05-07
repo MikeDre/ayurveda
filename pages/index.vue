@@ -73,7 +73,7 @@
           <div class="quiz__question no-mt" v-if="currentStep === 9">
               <h4 class="quiz__category">Now let’s look at your mental profile</h4>
               <h2><strong>Thoughts?</strong></h2>
-              <button class="quiz__selection" @click="addVata(currentStep)">onstantly changing, (no idea what I want)</button>
+              <button class="quiz__selection" @click="addVata(currentStep)">Constantly changing, (no idea what I want)</button>
               <button class="quiz__selection" @click="addPitta(currentStep)">“I know what I want and the eye is on the prize”</button>
               <button class="quiz__selection" @click="addKapha(currentStep)">Slow and steady wins the race</button>
           </div>
