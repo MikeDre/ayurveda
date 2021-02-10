@@ -1,6 +1,9 @@
-# ayurveda
+<img src="https://i.imgur.com/P2Zqdu6.png" alt="" width="150">
 
-> Ayurveda Quiz
+# Ayurveda Quiz
+
+Tech stack: <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer">Nuxt.js</a>, <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">Vue</a>, <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">SCSS</a>
+<hr>
 
 ## Build Setup
 
